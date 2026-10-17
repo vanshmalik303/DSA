@@ -1,5 +1,5 @@
 # Definition for a binary tree node.
-# class Tr-eeNode:
+# class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
 #         self.val = val
 #         self.left = left
@@ -7,10 +7,11 @@
 class Solution:
     def sortedArrayToBST(self, nums: list[int]) -> TreeNode | None:
         if len(nums)==0:
-            return 
+            return
+
         mid = len(nums)//2
         root = TreeNode(nums[mid])
-
+            
         root.left = self.sortedArrayToBST(nums[:mid])
         root.right = self.sortedArrayToBST(nums[mid+1:])
 
